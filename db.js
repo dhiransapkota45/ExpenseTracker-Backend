@@ -1,8 +1,8 @@
 const mongoose = require("mongoose")
-const databaseUrl = `mongodb://localhost:27017/expenseTracker`
+require("dotenv").config()
 
 const connetion = async() => {
-    await mongoose.connect(databaseUrl)
+    await mongoose.connect(process.env.DATABASE_URL)
     console.log("conneted to database");
 }
 
